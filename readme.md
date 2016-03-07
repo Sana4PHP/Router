@@ -34,6 +34,7 @@ Note: Methods are case insensitive.
 Main purpose of using a router, is adding routes and executing one of them accourding to user's request. to add a new route, you can use desired Method as a Router's method.
 
 Each Method has 4 parameters:
+
 1. $pattern: Patterns (or paths) describe which request belongs to this route. For more information, read bottom of this document.
 2. $callback: A valid PHP callback that executes only if client's request matches both method and pattern.
 3. $generatorCodeName: A unique code name for this pattern (optional).
@@ -60,6 +61,7 @@ Each Method has 4 parameters:
 As you see above, we added 4 routes with 4 different callbacks, which 2 of them have same $pattern which are called by different HTTP Methods.
 
 Notes:
+
 1. Methods are case insensitive. It means that you can use `Route::post()` instead of `Route::POST()`
 2. You can add new routes by using `Router::defineRoute()` too. Internally, each of above methods, calls `Router::defineRoute()`, which has 5 parameters, first parameter is $method, next 4 parameters are same as above.
 3. for $generatorCodeName and $generatorCallback, read bellow.
@@ -74,6 +76,7 @@ Last two parameters of `Router::defineRoute()` or `Router::METHOD()` are for def
 
 ##### url() - Router::generate()
 `url()` is a wrapper for `Router::generate()`. They are the same. They have 2 parameters:
+
 1. $generatorCodeName: A code name which is defined for a generator with each pattern/path.
 2. $parameters: This information will be passed to generator's callback as first argument.
 
@@ -115,6 +118,7 @@ Note that all spaces between each part of a parameter are optional. You can add 
 
 ##### Parameter Types
 In current version of Sana Router, there are following types are defined by default:
+
 * `alphanumeric` : [a-zA-Z0-9]
 * `alphabet` : [a-zA-Z]
 * `decimal` : [0-9]
@@ -127,6 +131,7 @@ In current version of Sana Router, there are following types are defined by defa
 
 ##### Defining New Parameter Types
 If you want to add new parameter types, you can use `Router::newParameterType()` and pass two arguments to that:
+
 1. `$type` : Name of the new type
 2. `$regex` : A valid regular expression character set, like `[0-8]` which matches octal numbers.
 
@@ -137,8 +142,8 @@ Here is the hierarchy of exceptions:
 
 + Throwable (Only PHP 7.0+)
 + + \Exception
-+ + + \Sana\Exception\Exception
-+ + + + \Sana\Router\Exception\Exception
++ + + \Sana\Exception\Base
++ + + + \Sana\Router\Exception\Base
 + + + + + \Sana\Router\Exception\Callback
 + + + + + \Sana\Router\Exception\Error404
 + + + + + \Sana\Router\Exception\Error501
@@ -148,6 +153,7 @@ Here is the hierarchy of exceptions:
 + + + + + \Sana\Router\Exception\Pattern
 
 Note that:
+
 1. `\Throwable` Is the base class for all PHP 7.0+ exceptions.
 2. `\Exception` Is the base class for all PHP 5.x exceptions and extends `\Throwable` in PHP 7.
 3. `\Sana\Exception\Base` Is the base class for all Sana libraries exceptions, which extends `\Exception`.
@@ -167,6 +173,7 @@ All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
+
 1. Redistributions of source code must retain the above copyright
    notice, this list of conditions and the following disclaimer.
 2. Redistributions in binary form must reproduce the above copyright
