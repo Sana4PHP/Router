@@ -1,6 +1,6 @@
 # `Sana Router v1.0`
 
-Sana Router is a easy to use, high peformance, customizable, and most importantly, Open Source router for PHP. It supports all HTTP/1.0, HTTP/1.1 and HTTP/2.0 standard methods, but you can use it for other HTTP based protocols, like WebDAV, CalDAV and CardDAV.
+Sana Router is a easy to use, high peformance, customizable and Open Source router for PHP. It supports all HTTP/1.0, HTTP/1.1 and HTTP/2.0 standard methods, but you can use it for other HTTP based protocols, like WebDAV, CalDAV and CardDAV.
 
 ### Installation
 Just move `Sana` folder to your project, and include `autoload.php`.
